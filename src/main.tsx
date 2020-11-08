@@ -1,13 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {Hello} from "./HelloComponent/Hello.Component";
-
-export interface HelloProps {
-    compiler: string;
-    framework: string;
-}
+import { App } from "./AppComponent/App.Component";
 
 ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
+    <App />,
     document.getElementById("app-root")
 );

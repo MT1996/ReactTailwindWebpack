@@ -35,7 +35,7 @@ module.exports = {
     },
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx", ".js", ".jsx"]
+        extensions: [".ts", ".tsx", ".js", ".jsx", ".css", ".scss"]
     },
     module: {
         rules: [
@@ -46,28 +46,18 @@ module.exports = {
                     {
                         loader: "css-loader",
                         options: {
+                            importLoaders: 2,
                             url: true,
                             sourceMap: true
                         }
                     },
                     {
-                        loader: "postcss-loader",
-                        options: {
-                            plugins: function() {
-                                return [
-                                    require("precss"),
-                                    tailwindcss('./tailwind.config.js'),
-                                    require("autoprefixer"),
-                                    require("cssnano")
-                                ]
-                            },
-                            sourceMap: true
-                        }
+                        loader: "postcss-loader"
                     },
                     {
                         loader: "sass-loader",
                         options: {
-                            sourceMap: true
+                            sourceMap: true,
                         }
                     }
                 ]

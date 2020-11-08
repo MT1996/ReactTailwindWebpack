@@ -1,0 +1,12 @@
+@layer components {
+  .form {
+    & .input {
+      &-default {
+        @apply pl-2 py-1 border border-solid border-black rounded-full;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
